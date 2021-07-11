@@ -16,12 +16,12 @@ module.exports = {
         '2xl': '1920px',
       },
     colors: {
-      bg: '#f3f3f3',
+      bg: '#1C1C1C',
       transparent: 'transparent',
       current: 'currentColor',
 
       black: colors.black,
-      white: colors.white,
+      white: '#F1F1F1',
       gray: colors.coolGray,
       red: colors.red,
       yellow: colors.amber,
@@ -29,7 +29,17 @@ module.exports = {
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
-      pink: colors.pink,
+      pink: {
+         100: "#ffd6ea",
+         200: "#ffadd5",
+         300: "#ff84c1",
+         400: "#ff5bac",
+         500: "#ff3297",
+         600: "#cc2879",
+         700: "#991e5b",
+         800: "#66143c",
+         900: "#330a1e"
+        }
     },
     spacing: {
       px: '1px',
@@ -244,6 +254,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Poppins',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -270,10 +281,20 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      lato: [
+        'Lato',
+        'ui-serif',
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif'
+      ]
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
+      md: '1rem', // 16px
       base: ['1rem', { lineHeight: '1.5rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
