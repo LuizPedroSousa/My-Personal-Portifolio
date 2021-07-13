@@ -39,8 +39,20 @@ module.exports = {
          700: "#991e5b",
          800: "#66143c",
          900: "#330a1e"
-        }
+      },
+    gray: {
+        100: "#f9f9f9",
+        200: "#f3f3f3",
+        300: "#ededed",
+        400: "#e7e7e7",
+        500: "#e1e1e1",
+        600: "#b4b4b4",
+        700: "#878787",
+        800: "#5a5a5a",
+        900: "#2d2d2d"
+     },
     },
+
     spacing: {
       px: '1px',
       0: '0px',
@@ -294,7 +306,6 @@ module.exports = {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      md: '1rem', // 16px
       base: ['1rem', { lineHeight: '1.5rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
