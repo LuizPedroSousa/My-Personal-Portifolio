@@ -13,7 +13,7 @@ interface ListLinksMobalProps {
 }
 
 export const Container = styled.header`
-    ${tw`w-full h-16`}
+    ${tw`w-full h-16 mx-auto`}
     nav {
         ${tw`
             flex items-center justify-between w-full
@@ -25,8 +25,11 @@ export const Container = styled.header`
         ${tw`hidden l:(flex justify-between items-center w-96)`}
     }
 
+    max-width: 94%;
+
     @media ${({ theme: { bp } }) => bp.l} {
         height: 6.25rem;
+        max-width: 1110px;
     }
 `
 
@@ -119,7 +122,7 @@ export const ListLinksMobal = styled(motion.li)<ListLinksMobalProps>`
         ${tw`
             w-full h-full flex duration-700
             items-center justify-center font-sans font-bold
-            text-md relative
+            text-base relative
             before:(bg-pink-100)
             after:(right-0 transition-all w-0 bg-gradient-to-r from-pink-600 via-red-500 to-pink-400)
             hover:(text-pink-500 before:(duration-1000 bg-gradient-to-r from-pink-800 via-red-500 to-pink-400))
@@ -145,7 +148,7 @@ export const ListLinksDesktop = styled(motion.li)<ListLinksDesktopProps>`
     ${tw`w-max`}
     a {
         ${tw`
-            text-white font-sans font-bold text-md
+            text-white font-sans font-bold text-base
             relative transition-colors duration-500
             before:(bg-gradient-to-r from-pink-600 via-red-500 to-pink-400)
             after:(bg-gradient-to-r from-pink-600 via-red-500 to-pink-400)

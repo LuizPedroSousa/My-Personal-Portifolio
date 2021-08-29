@@ -9,15 +9,7 @@ import {
     useDisclosure
 } from '@chakra-ui/react'
 import Hamburger from 'components/AnimatedSvgs/Hamburger'
-import {
-    Container,
-    ListLinksMobal,
-    ListLinksDesktop,
-    HamburgerButton,
-    DrawerContent,
-    ExitButton,
-    DevName
-} from './styles'
+import * as S from './styles'
 import { motion } from 'framer-motion'
 
 type PageLink = {
@@ -53,9 +45,9 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
         })
     }, [])
     return (
-        <Container>
+        <S.Container>
             <nav>
-                <DevName>
+                <S.DevName>
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         animate={{
@@ -85,16 +77,16 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
                     >
                         {'/>'}
                     </motion.span>
-                </DevName>
+                </S.DevName>
 
-                <HamburgerButton
+                <S.HamburgerButton
                     onClick={onOpen}
                     whileHover={{ scale: [1, 0.9, 0.98, 0.9] }}
                     whileTap={{ scale: [1, 0.9, 0.98, 0.8] }}
                     type="button"
                 >
                     <Hamburger />
-                </HamburgerButton>
+                </S.HamburgerButton>
                 <Drawer
                     isOpen={isOpen}
                     placement="bottom"
@@ -102,23 +94,23 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
                     onClose={onClose}
                 >
                     <DrawerOverlay />
-                    <DrawerContent>
+                    <S.DrawerContent>
                         <DrawerHeader>
-                            <ExitButton
+                            <S.ExitButton
                                 whileHover={{
                                     scale: [1, 0.9, 0.91, 0.9]
                                 }}
                                 onClick={onClose}
                             >
                                 <AiOutlineClose />
-                            </ExitButton>
+                            </S.ExitButton>
                         </DrawerHeader>
 
                         <DrawerBody>
                             <ul>
                                 {pageLinks.map(
                                     ({ href, label, motionDelay }, i) => (
-                                        <ListLinksMobal
+                                        <S.ListLinksMobal
                                             isActivePage={href === activePage}
                                             whileHover={{
                                                 scale: [1, 0.9, 0.91, 0.9],
@@ -138,16 +130,16 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
                                             <Link href={href}>
                                                 <a>{label}</a>
                                             </Link>
-                                        </ListLinksMobal>
+                                        </S.ListLinksMobal>
                                     )
                                 )}
                             </ul>
                         </DrawerBody>
-                    </DrawerContent>
+                    </S.DrawerContent>
                 </Drawer>
                 <ul>
                     {pageLinks.map(({ href, label, motionDelay }, i) => (
-                        <ListLinksDesktop
+                        <S.ListLinksDesktop
                             isActivePage={href === activePage}
                             initial={{ y: 10, opacity: 0 }}
                             animate={{
@@ -161,11 +153,11 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
                             key={href + label + i}
                         >
                             <a href={href}>{label}</a>
-                        </ListLinksDesktop>
+                        </S.ListLinksDesktop>
                     ))}
                 </ul>
             </nav>
-        </Container>
+        </S.Container>
     )
 }
 
