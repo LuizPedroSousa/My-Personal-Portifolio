@@ -128,7 +128,7 @@ export const IntroductionAvatar = styled(motion.div)`
 `
 
 export const IntroductionContact = styled.div`
-    ${tw`mt-6 sm:mt-0`}
+    ${tw`mt-6 sm:mt-0 z-10`}
     grid-area: contact;
 
     p {
@@ -142,15 +142,25 @@ export const IntroductionContact = styled.div`
     }
     > p {
         ${tw`
-            relative
+            relative mt-10
         `};
     }
-    > div {
+    > div:first-of-type {
         p {
             ${tw`text-gray-500`}
         }
         ${tw`flex items-center justify-between mt-4`}
         max-width: 70%;
+    }
+
+    > div:last-of-type {
+        p {
+            ${tw`text-gray-500`}
+        }
+        ${tw`flex items-center justify-start mt-6`}
+        > button:first-of-type {
+            ${tw`mr-4`}
+        }
     }
 
     @media ${({ theme: { bp } }) => bp.xs} {

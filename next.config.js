@@ -1,8 +1,9 @@
 const withPlugins = require('next-compose-plugins')
 const withImages = require('next-images')
+const withTM = require('next-transpile-modules')(['three'])
 
 const imagePlugin = withImages({
-    esModule: true,
+    esModule: true
 })
 
 const nextConfig = {
@@ -10,8 +11,7 @@ const nextConfig = {
         domains: ['avatars.githubusercontent.com']
     },
 
-    env: {
-    }
+    env: {}
 }
 
-module.exports = withPlugins([imagePlugin, nextConfig])
+module.exports = withPlugins([imagePlugin, nextConfig, withTM])

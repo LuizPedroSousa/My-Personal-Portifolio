@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { useClipboard, useDisclosure } from '@chakra-ui/react'
-import { AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai'
+import {
+    AiFillGithub,
+    AiFillLinkedin,
+    AiFillTwitterCircle
+} from 'react-icons/ai'
 import { FaDiscord } from 'react-icons/fa'
 
 import * as S from './styles'
@@ -44,6 +48,24 @@ const ContactList: React.FC = () => {
                 >
                     <span>
                         <AiFillGithub />
+                    </span>
+                </motion.a>
+            </li>
+            <li>
+                <motion.a
+                    variants={contactVariants}
+                    initial="hidden"
+                    animate={{
+                        opacity: [null, 1],
+                        y: [null, 0],
+                        transition: { delay: 0.25, duration: 0.5 }
+                    }}
+                    href="https://www.linkedin.com/in/luiz-pedro-sousa-lemos-9898051b7/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <span>
+                        <AiFillLinkedin />
                     </span>
                 </motion.a>
             </li>

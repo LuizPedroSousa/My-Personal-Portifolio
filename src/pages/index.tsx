@@ -8,14 +8,15 @@ import Heading from 'components/Header'
 import LineGradient from 'components/AnimatedSvgs/LineGradient'
 import { motion } from 'framer-motion'
 import ContactList from 'components/ContactList'
+import { TextButton } from 'components/Buttons/TextButton'
 
 export default function Home() {
     const introductionDescriptionRef = useRef<HTMLParagraphElement>(null)
 
     useEffect(() => {
-        //
-        //
-        // do que ontem.
+        if (introductionDescriptionRef?.current?.textContent) {
+            return
+        }
         const firstDescriptionContent =
             'Sou um desenvolvedor frontend que ama café'
 
@@ -141,6 +142,10 @@ export default function Home() {
                             <div>
                                 <p>Siga-me </p>
                                 <ContactList />
+                            </div>
+                            <div>
+                                <TextButton>Faça contato</TextButton>
+                                <TextButton outline>Downlaod CV</TextButton>
                             </div>
                         </S.IntroductionContact>
                     </S.IntroductionSection>

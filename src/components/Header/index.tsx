@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ activePage }) => {
         const textToInsert = 'Luiz Pedro'.split('')
         textToInsert.forEach((letter, i) => {
             setTimeout(() => {
-                devRef.current.innerHTML += letter
+                devRef.current.textContent += letter
             }, 250 * i)
         })
     }, [])
